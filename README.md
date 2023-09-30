@@ -15,15 +15,11 @@ Apply data validation on `age > 18` for `PUT`
 
 ## Run the project
 
-open a terminal in ./integration and run `docker-compose up`
+in `./web` rename `sample.env` as `.env`
 
-in another terminal in the root of the project run `python manage.py migrate --fake api`
-(fake because we already created the table setting up the db)
-then `python manage.py migrate`
+run `docker-compose up`
 
-rename `.env` as `sample.env` and eventually change the host as "localhost". depend on your docker config
-
-
-then `python manage.py runserver`
-
-and visit `localhost:8000/api/customers`
+and visit
+- `localhost:8000/api/customers`
+- `localhost:8000/api/customers/6`, submit a PUT request with the form
+- `localhost:8000/api/customers/age/average`
